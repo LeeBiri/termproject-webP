@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>메인 화면</title>
+		<link rel="stylesheet" href="/css/style.css" />
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ65-phJhI4pf2cmIDsf54-dXnHRHj7xE&libraries=geometry&callback=initMap"></script>
+	</head>
+	<body>
+		<!-- 필터링 UI -->
+		<div id="filter-container">
+			<h3 style="margin-top: 0; text-align: center; color: #2c3e50">이벤트 검색</h3>
+			<div style="margin-bottom: 10px">
+				<label for="city-search" style="display: block; margin-bottom: 5px; font-weight: bold">도시 검색</label>
+				<input id="city-search" type="text" placeholder="도시 이름 입력" style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px" />
+			</div>
+			<div style="margin-bottom: 10px">
+				<label for="start-date" style="display: block; margin-bottom: 5px; font-weight: bold">시작 날짜</label>
+				<input id="start-date" type="date" style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px" />
+			</div>
+			<div style="margin-bottom: 10px">
+				<label for="end-date" style="display: block; margin-bottom: 5px; font-weight: bold">종료 날짜</label>
+				<input id="end-date" type="date" style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px" />
+			</div>
+			<div style="display: flex; justify-content: space-between">
+				<button onclick="searchCity()" style="width: 48%; background-color: #3498db; color: #fff; padding: 8px; border: none; border-radius: 5px; cursor: pointer">도시 검색</button>
+				<button id="filter-button" style="width: 48%; background-color: #2ecc71; color: #fff; padding: 8px; border: none; border-radius: 5px; cursor: pointer">필터 적용</button>
+			</div>
+		</div>
+
+		<!-- 이벤트 목록 -->
+		<div id="event-list"></div>
+
+		<!-- 지도 -->
+		<div id="map"></div>
+	</body>
+	<script src="/js/main.js" defer></script>
+</html>
